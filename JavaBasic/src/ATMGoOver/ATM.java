@@ -74,6 +74,7 @@ public class ATM {
     //               查询
                    break;
                case 2:
+                   SavingsAccount();
     //               存款
                    break;
                case 3:
@@ -105,6 +106,16 @@ public class ATM {
         System.out.println("余额是" + loginAcc.getMoney());
         System.out.println("每次最大额度" + loginAcc.getLimit());
         System.out.println("户主是" + loginAcc.getSex());
+    }
+    //存款
+    private void SavingsAccount(){
+        System.out.println("存款操作");
+        System.out.println("请您输入存款金额");
+        double money = sc.nextDouble();
+
+        //更新当前账户的余额
+        loginAcc.setMoney(loginAcc.getMoney() + money);
+        System.out.println("恭喜您，您的存款是余额是："+ loginAcc.getMoney());
     }
     //开户
     private void createAccount(){
