@@ -155,6 +155,7 @@ public class ATM {
             System.out.println("您自己的账户都没有钱，就别转了");
         }
 
+
         while (true) {
             System.out.println("请您输入对方的卡号");
             String cardId = sc.next();
