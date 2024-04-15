@@ -69,7 +69,6 @@ public class ATM {
        switch (command){
            case 1:
 //               查询
-
                break;
            case 2:
 //               存款
@@ -90,7 +89,7 @@ public class ATM {
 //               注销当前用户
                break;
            default:
-//               ........
+               System.out.println("您当前输入的命令不存在，请确认！");
        }
 
    }
