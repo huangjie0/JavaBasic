@@ -155,7 +155,6 @@ public class ATM {
             System.out.println("您自己的账户都没有钱，就别转了");
         }
 
-
         while (true) {
             System.out.println("请您输入对方的卡号");
             String cardId = sc.next();
@@ -167,6 +166,24 @@ public class ATM {
                 String name = "*" + acc.getUserName().substring(1);
 
                 System.out.println("请您输入" + name + "的姓氏");
+
+                String preName = sc.next();
+                //判断名字是否相等
+                if(acc.getUserName().startsWith(preName)){
+                    while (true) {
+                        System.out.println("请您输入给对方转账的金额");
+                        double money = sc.nextDouble();
+                        if(loginAcc.getMoney() >= money){
+                            loginAcc.setMoney(loginAcc.getMoney() - money);
+                            acc.setMoney(acc.getMoney() + money);
+                            return;
+                        }else {
+                            System.out.println("您的余额不足，无法给对方转账！" + loginAcc.getMoney());
+                        }
+                    }
+                }else {
+                    System.out.println("对不起，您认证的姓氏有问题！");
+                }
             }
         }
 
