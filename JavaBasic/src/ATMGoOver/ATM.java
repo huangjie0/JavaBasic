@@ -82,6 +82,7 @@ public class ATM {
     //               取款
                    break;
                case 4:
+                   transferMoney();
     //               转账
                    break;
                case 5:
@@ -141,6 +142,33 @@ public class ATM {
                 System.out.println("余额不足，您的账户余额是" + loginAcc.getMoney());
             }
         }
+    }
+//    转账功能
+    private void transferMoney(){
+        System.out.println("==用户转账==");
+        if(accounts.size() < 2){
+            System.out.println("当前系统只有一个账户");
+            return;
+        }
+//        判断账户是否有钱
+        if(loginAcc.getMoney() == 0){
+            System.out.println("您自己的账户都没有钱，就别转了");
+        }
+
+        while (true) {
+            System.out.println("请您输入对方的卡号");
+            String cardId = sc.next();
+
+            Account acc = getAccountByCardId(cardId);
+            if(acc == null){
+                System.out.println("您输入的对方卡号不存在！");
+            }else {
+                String name = "*" + acc.getUserName().substring(1);
+
+                System.out.println("请您输入" + name + "的姓氏");
+            }
+        }
+
     }
     //开户
     private void createAccount(){
