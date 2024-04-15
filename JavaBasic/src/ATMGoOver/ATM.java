@@ -93,6 +93,7 @@ public class ATM {
     //               退出
                    return;
                case 7:
+                   accountCancellation();
     //               注销当前用户
                    break;
                default:
@@ -143,6 +144,9 @@ public class ATM {
             }
         }
     }
+    private  void accountCancellation(){
+
+    }
 //    转账功能
     private void transferMoney(){
         System.out.println("==用户转账==");
@@ -176,6 +180,7 @@ public class ATM {
                         if(loginAcc.getMoney() >= money){
                             loginAcc.setMoney(loginAcc.getMoney() - money);
                             acc.setMoney(acc.getMoney() + money);
+                            System.out.println("您转账成功了！");
                             return;
                         }else {
                             System.out.println("您的余额不足，无法给对方转账！" + loginAcc.getMoney());
