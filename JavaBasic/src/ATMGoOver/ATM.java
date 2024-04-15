@@ -54,6 +54,7 @@ public class ATM {
                         System.out.println("恭喜您：" + acc.getUserName() + "成功登录了系统，您的卡号是" + acc.getCardId());
                         //展示登录后操作界面
                        showUserInfo();
+                       return;
                    }else {
                        System.out.println("您输入的密码不正确");
                    }
@@ -63,36 +64,48 @@ public class ATM {
    }
 
    private void showUserInfo(){
-       System.out.println(loginAcc.getUserName() + "您可以选择如下功能进行账户处理");
-       System.out.println("1,查询 2,存款 3,取款 4,转账 5,密码修改 6,退出 7,注销当前用户");
-       int command = sc.nextInt();
-       switch (command){
-           case 1:
-//               查询
-               break;
-           case 2:
-//               存款
-               break;
-           case 3:
-//               取款
-               break;
-           case 4:
-//               转账
-               break;
-           case 5:
-//               密码修改
-               break;
-           case 6:
-//               退出
-               break;
-           case 7:
-//               注销当前用户
-               break;
-           default:
-               System.out.println("您当前输入的命令不存在，请确认！");
+       while (true) {
+           System.out.println(loginAcc.getUserName() + "您可以选择如下功能进行账户处理");
+           System.out.println("1,查询 2,存款 3,取款 4,转账 5,密码修改 6,退出 7,注销当前用户");
+           int command = sc.nextInt();
+           switch (command){
+               case 1:
+                   showInfo();
+    //               查询
+                   break;
+               case 2:
+    //               存款
+                   break;
+               case 3:
+    //               取款
+                   break;
+               case 4:
+    //               转账
+                   break;
+               case 5:
+    //               密码修改
+                   break;
+               case 6:
+                   System.out.println(loginAcc.getUserName() + "您退出系统成功！");
+    //               退出
+                   return;
+               case 7:
+    //               注销当前用户
+                   break;
+               default:
+                   System.out.println("您当前输入的命令不存在，请确认！");
+           }
        }
-
    }
+   //展示当前的登录信息
+    private void showInfo(){
+        System.out.println("当前的信息如下：");
+        System.out.println("卡号是" + loginAcc.getCardId());
+        System.out.println("户主是" + loginAcc.getUserName());
+        System.out.println("余额是" + loginAcc.getMoney());
+        System.out.println("每次最大额度" + loginAcc.getLimit());
+        System.out.println("户主是" + loginAcc.getSex());
+    }
     //开户
     private void createAccount(){
         System.out.println("系统开户操作开始咯");
