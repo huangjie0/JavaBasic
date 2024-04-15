@@ -78,6 +78,7 @@ public class ATM {
     //               存款
                    break;
                case 3:
+                   withdrawMoney();
     //               取款
                    break;
                case 4:
@@ -103,9 +104,9 @@ public class ATM {
         System.out.println("当前的信息如下：");
         System.out.println("卡号是" + loginAcc.getCardId());
         System.out.println("户主是" + loginAcc.getUserName());
+        System.out.println("性别是" + loginAcc.getSex());
         System.out.println("余额是" + loginAcc.getMoney());
         System.out.println("每次最大额度" + loginAcc.getLimit());
-        System.out.println("户主是" + loginAcc.getSex());
     }
     //存款
     private void SavingsAccount(){
@@ -116,6 +117,30 @@ public class ATM {
         //更新当前账户的余额
         loginAcc.setMoney(loginAcc.getMoney() + money);
         System.out.println("恭喜您，您的存款是余额是："+ loginAcc.getMoney());
+    }
+
+    //取款
+    private void withdrawMoney(){
+        System.out.println("取钱操作");
+        if(loginAcc.getMoney() < 100){
+            System.out.println("您的账户不足100元，不允许取钱！");
+            return;
+        }
+        while (true) {
+            System.out.println("请您输入取款金额");
+            double m = sc.nextDouble();
+            if(loginAcc.getMoney() >= m){
+                if(m > loginAcc.getLimit()){
+                    System.out.println("当前取款金额超过每次限额，每次最多可取" + loginAcc.getLimit());
+                }else {
+                    loginAcc.setMoney(loginAcc.getMoney() - m );
+                    System.out.println("您取款" + m + "成功，取款后您的余额是" + loginAcc.getMoney());
+                    break;
+                }
+            }else {
+                System.out.println("余额不足，您的账户余额是" + loginAcc.getMoney());
+            }
+        }
     }
     //开户
     private void createAccount(){
