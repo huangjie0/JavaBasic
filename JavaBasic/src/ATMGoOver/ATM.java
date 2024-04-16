@@ -93,7 +93,9 @@ public class ATM {
     //               退出
                    return;
                case 7:
-                   accountCancellation();
+                   if(accountCancellation()){
+                       return;
+                   }
     //               注销当前用户
                    break;
                default:
@@ -159,9 +161,6 @@ public class ATM {
                     System.out.println("对不起，您的账户存在金额，不允许销户操作！");
                     return false;
                 }
-//            case "n":
-//
-//                break;
             default:
                 System.out.println("好的，您的账户保留！");
                 return false;
