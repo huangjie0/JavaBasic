@@ -144,8 +144,28 @@ public class ATM {
             }
         }
     }
-    private  void accountCancellation(){
-
+    private  boolean accountCancellation(){
+        System.out.println("销户操作");
+        System.out.println("请问您确认销户吗？y/n");
+        String command = sc.next();
+        switch (command){
+            case "y":
+                //判断账户是否有钱
+                if(loginAcc.getMoney() == 0){
+                    accounts.remove(loginAcc);
+                    System.out.println("您好，您的账户已经成功销户了！");
+                    return true;
+                }else {
+                    System.out.println("对不起，您的账户存在金额，不允许销户操作！");
+                    return false;
+                }
+//            case "n":
+//
+//                break;
+            default:
+                System.out.println("好的，您的账户保留！");
+                return false;
+        }
     }
 //    转账功能
     private void transferMoney(){
