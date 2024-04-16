@@ -86,6 +86,7 @@ public class ATM {
     //               转账
                    break;
                case 5:
+                   updatePassword();
     //               密码修改
                    break;
                case 6:
@@ -111,6 +112,32 @@ public class ATM {
         System.out.println("性别是" + loginAcc.getSex());
         System.out.println("余额是" + loginAcc.getMoney());
         System.out.println("每次最大额度" + loginAcc.getLimit());
+    }
+    //修改账户密码
+    private void updatePassword(){
+        System.out.println("账户密码修改操作！");
+        while (true) {
+            System.out.println("请您输入当前账户密码");
+            String password = sc.next();
+            if(loginAcc.getPassword().equals(password)){
+                while (true) {
+                    System.out.println("请输入新密码");
+                    String newPassword = sc.next();
+                    System.out.println("请输入确认密码");
+                    String okPassword = sc.next();
+
+                    if(newPassword.equals(okPassword)){
+                        loginAcc.setPassword(newPassword);
+                        System.out.println("恭喜您，您的密码修改完成！");
+                        return;
+                    }else {
+                        System.out.println("您输入的俩次密码不一致");
+                    }
+                }
+            }else {
+                System.out.println("您当前的密码不正确！");
+            }
+        }
     }
     //存款
     private void SavingsAccount(){
