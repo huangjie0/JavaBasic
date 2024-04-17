@@ -11,6 +11,6 @@ public class Student {
         System.out.println("Hello world");
     }
     public void printScore(){
-        System.out.println("成绩：" + (score >= 60 ? "及格" : "不及格"));
+        System.out.println("成绩：" + score + (score >= 60 ? "及格" : "不及格"));
     }
 }
