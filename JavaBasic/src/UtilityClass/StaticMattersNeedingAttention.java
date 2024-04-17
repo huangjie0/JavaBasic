@@ -15,5 +15,9 @@ public class StaticMattersNeedingAttention {
     public void helloT(){
         school = "hhj";
         hello();
+        this.printHello();
+    }
+    public void printHello(){
+
     }
 }
