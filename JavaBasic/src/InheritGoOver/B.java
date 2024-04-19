@@ -9,5 +9,4 @@ public class B extends A{
         //访问非私有方法
         printHello();
     }
-
 }
