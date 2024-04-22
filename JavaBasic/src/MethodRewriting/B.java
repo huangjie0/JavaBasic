@@ -1,5 +1,7 @@
 package MethodRewriting;
 
+import java.util.ArrayList;
+
 public class B extends A{
     //方法重写
     @Override
@@ -26,5 +28,12 @@ public class B extends A{
         B b = new B();
         b.print1();
         b.print2(1,2);
+        System.out.println("-------------------");
+        Student s = new Student("黄杰",19);
+        System.out.println(s.toString());
+        System.out.println(s);
+        ArrayList<String> list = new ArrayList<>();
+        list.add("java");
+        System.out.println(list);
     }
 }
