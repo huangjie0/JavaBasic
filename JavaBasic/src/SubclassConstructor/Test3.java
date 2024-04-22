@@ -23,6 +23,7 @@ class Student {
     }
 
     public Student() {
+
     }
 
     public Student(String name,int age){
