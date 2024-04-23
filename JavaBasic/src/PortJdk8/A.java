@@ -16,9 +16,13 @@ public interface A {
 //    private void test2(){
 //        System.out.println("====私有方法====");
 //    }
-    //静态方法
+    //静态方法，使用public修饰
     public static void test3(){
         System.out.println("====静态方法=====");
     }
 
+    void test4();
+    default void test5(){
+
+    }
 }
