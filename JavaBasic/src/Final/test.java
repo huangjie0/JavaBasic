@@ -4,10 +4,15 @@ package Final;
 * */
 
 public class test {
+    public static final String SCHOOL_NAME = "黑马";
+    private final int age = 30;
     public static void main(String[] args) {
         final int a;
+        final int[] qw = {1,2,3,4};
         a = 12;
 //        a = 13 不能二次赋值
+//        schoolName = "白哦吗";
+        qw[1] = 2;
     }
 }
 final class A{
