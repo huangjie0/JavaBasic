@@ -17,7 +17,13 @@ public class Outer1 {
         }
 
         public void test(){
-
+            System.out.println(name);
+//            System.out.println(age);
         }
+    }
+    public static void test2(){
+        System.out.println(name);
+        //静态方法不能访问实例成员
+//        System.out.println(age);
     }
 }
