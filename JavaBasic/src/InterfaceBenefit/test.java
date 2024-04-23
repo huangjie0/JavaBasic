@@ -10,6 +10,9 @@ public class test {
 
         Driver d = new A();
         d.driver();
+
+        Singer s = new A();
+        s.sing();
     }
 }
 class A extends Student implements Driver,Singer{
