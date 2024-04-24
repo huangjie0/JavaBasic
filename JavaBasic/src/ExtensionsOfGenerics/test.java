@@ -44,8 +44,8 @@ public class test {
 //
 //    }
 
-    //?通配符，在使用泛型时候代表一切类型
-    public static void go(ArrayList<?> cars){
+    //?通配符，在使用泛型时候代表一切类型, ? extends Car(上限)  ? super Car(下限)
+    public static void go(ArrayList<? extends Car> cars){
 
     }
 }
