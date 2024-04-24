@@ -5,6 +5,7 @@ package GenericInterface;
 
 public class test {
     public static void main(String[] args) {
+        //泛型接口处理
 
     }
 }
