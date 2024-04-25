@@ -38,10 +38,11 @@ public class LocalDate_Test {
         LocalDate ld29 = LocalDate.of(2011,12,12);
 
         //判断2个日期对象是否相等，在前还是在后
-        System.out.println( ld22.equals(ld29));
+        System.out.println(ld22.equals(ld29));
         //之后
         System.out.println(ld22.isAfter(ld29));
         //之前
         System.out.println(ld22.isBefore(ld29));
+
     }
 }
