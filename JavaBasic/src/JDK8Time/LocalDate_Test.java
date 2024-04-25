@@ -32,7 +32,6 @@ public class LocalDate_Test {
         System.out.println(ld2);
         System.out.println(ld3);
 
-
         //获取指定的localDate对象
         LocalDate ld22 = LocalDate.of(2099,12,12);
         LocalDate ld29 = LocalDate.of(2011,12,12);
@@ -43,6 +42,5 @@ public class LocalDate_Test {
         System.out.println(ld22.isAfter(ld29));
         //之前
         System.out.println(ld22.isBefore(ld29));
-
     }
 }
