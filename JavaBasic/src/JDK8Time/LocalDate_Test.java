@@ -5,7 +5,6 @@ import java.time.LocalDate;
 public class LocalDate_Test {
     public static void main(String[] args) {
         LocalDate ld = LocalDate.now();
-
         //获取日期相关的内容
         //年
         int Year = ld.getYear();
@@ -42,5 +41,6 @@ public class LocalDate_Test {
         System.out.println(ld22.isAfter(ld29));
         //之前
         System.out.println(ld22.isBefore(ld29));
+
     }
 }
