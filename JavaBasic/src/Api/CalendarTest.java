@@ -24,6 +24,8 @@ public class CalendarTest {
         System.out.println(time);
 
         //修改日历某个信息
+        c.set(Calendar.MONTH,9);
+        System.out.println(c.get(Calendar.MONTH));
 
     }
 }
