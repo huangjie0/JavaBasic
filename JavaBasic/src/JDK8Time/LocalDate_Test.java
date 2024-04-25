@@ -24,6 +24,9 @@ public class LocalDate_Test {
         System.out.println(dayOfWeek);
 
         //修改年月日相关信息,基本用with
-        ld.withYear(2099);
+        LocalDate ld2 = ld.withYear(2099);
+        LocalDate ld3 = ld.withMonth(5);
+        System.out.println(ld2);
+        System.out.println(ld3);
     }
 }
