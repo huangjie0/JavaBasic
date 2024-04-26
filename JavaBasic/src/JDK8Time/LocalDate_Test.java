@@ -1,10 +1,14 @@
 package JDK8Time;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 public class LocalDate_Test {
     public static void main(String[] args) {
         LocalDate ld = LocalDate.now();
+//        LocalTime lt = LocalTime.now(); 年月日时分秒纳秒,同理，多了一个纳秒
+//        LocalDateTime ldt = LocalDateTime.now(); 年月日时分秒纳秒，同理，多了一个纳秒
         //获取日期相关的内容
         //年
         int Year = ld.getYear();
@@ -41,6 +45,14 @@ public class LocalDate_Test {
         System.out.println(ld22.isAfter(ld29));
         //之前
         System.out.println(ld22.isBefore(ld29));
+
+        //将LocalDateTime转换为LocalTime和LocalTime
+         LocalDateTime ldt = LocalDateTime.now();
+         LocalDate ld_2 = ldt.toLocalDate();
+         LocalTime lt_2 = ldt.toLocalTime();
+
+//         将LocalTime对象和LocalTime对象合并
+        LocalDateTime ldt_3 = LocalDateTime.of(ld_2,lt_2);
 
     }
 }
