@@ -28,6 +28,7 @@ public class MethodReference_test {
 
         //静态方法引用，简写lambda表达式
         Arrays.sort(students,ComparByData::compareByAge);
+        System.out.println(Arrays.toString(students));
 
     }
 }
