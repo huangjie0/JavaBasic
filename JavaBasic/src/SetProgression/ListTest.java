@@ -73,5 +73,6 @@ public class ListTest {
         stack.pop();
         stack.pop();
         System.out.println(stack);
+
     }
 }
