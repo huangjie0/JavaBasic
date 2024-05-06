@@ -61,5 +61,6 @@ public class ListTest {
         queue.removeFirst();
         queue.removeFirst();
         //栈
+
     }
 }
