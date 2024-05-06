@@ -1,6 +1,6 @@
 package SetProgression;
 /*
-* set集合
+* set集合 HashSet、LinkedHashSet、TreeSet
 * */
 
 import java.util.HashSet;
