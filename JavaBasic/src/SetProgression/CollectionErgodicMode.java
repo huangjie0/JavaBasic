@@ -5,7 +5,7 @@ import java.util.Collection;
 import java.util.Iterator;
 
 /**
- * collection集合的遍历方式,不支持for循环遍历
+ * collection集合的遍历方式,不支持for循环遍历，不确定有无索引
  * */
 
 public class CollectionErgodicMode {
