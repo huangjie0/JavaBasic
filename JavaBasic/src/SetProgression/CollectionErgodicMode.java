@@ -51,6 +51,14 @@ public class CollectionErgodicMode {
         movies.add(new Movie("阿凡达2",83.2,"匿名"));
 
         System.out.println(movies);
+        //遍历方式一
+        for (Movie movie : movies) {
+            System.out.println("电影名称：" + movie.getName());
+            System.out.println("电影评分：" + movie.getScore());
+            System.out.println("电影主演：" + movie.getActor());
+            System.out.println("----------------------------------");
+        }
+        //遍历方式二
 
     }
 }
