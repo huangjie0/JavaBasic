@@ -58,7 +58,5 @@ public class CollectionErgodicMode {
             System.out.println("电影主演：" + movie.getActor());
             System.out.println("----------------------------------");
         }
-        //遍历方式二
-
     }
 }
