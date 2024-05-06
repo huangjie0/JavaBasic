@@ -1,6 +1,7 @@
 package SetProgression;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.Iterator;
@@ -47,6 +48,19 @@ public class ListTest {
             String s1 = i.next();
             System.out.println(s1);
         }
+        //ArrayList和LinkList集合特点和区别
+//        ArrayList实现是数组扩容方式，LinkList实现方式是双链表实现（头尾增删最快）查询慢从头寻找
+//        LinkList常用方法
+        //创建队列
+        LinkedList<String> queue = new LinkedList<>();
+        queue.addLast("第1号人");
+        queue.addLast("第2号人");
+        queue.addLast("第3号人");
+        System.out.println(queue);
+        //出队
+        queue.removeFirst();
+        queue.removeFirst();
+        //栈
 
     }
 }
