@@ -3,6 +3,7 @@ package SetProgression;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.function.Consumer;
 
 /**
  * collection集合的遍历方式,不支持for循环遍历，不确定有无索引
@@ -28,5 +29,28 @@ public class CollectionErgodicMode {
             String ele = it.next();
             System.out.println(ele);
         }
+
+        //增强for循环,遍历数组和集合
+        for (String s:c){
+            System.out.println(c);
+        }
+
+        String[] arr= { "小例子","画虎","火炬护"};
+        for (String ca:arr){
+            System.out.println(ca);
+        }
+
+        System.out.println("--------------------------");
+
+        //使用lambda表达式遍历
+        c.forEach(System.out::println);
+        //电影对象案例
+        Collection<Movie> movies = new ArrayList<>();
+        movies.add(new Movie("宝贝计划",80.2,"成龙"));
+        movies.add(new Movie("阿凡达",82.2,"匿名"));
+        movies.add(new Movie("阿凡达2",83.2,"匿名"));
+
+        System.out.println(movies);
+
     }
 }
