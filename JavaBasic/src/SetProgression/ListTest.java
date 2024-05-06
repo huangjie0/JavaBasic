@@ -61,6 +61,17 @@ public class ListTest {
         queue.removeFirst();
         queue.removeFirst();
         //栈
-
+        LinkedList<String> stack = new LinkedList<>();
+        //压栈
+        stack.push("第1颗子弹");
+        stack.push("第2颗子弹");
+        stack.push("第3颗子弹");
+        stack.push("第4颗子弹");
+        System.out.println(stack);
+        stack.pop();
+        stack.pop();
+        stack.pop();
+        stack.pop();
+        System.out.println(stack);
     }
 }
