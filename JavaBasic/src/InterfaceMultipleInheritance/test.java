@@ -19,7 +19,7 @@ interface D extends C,B,A{}
 class E implements D{
     @Override
     public void test1(){
-
+        
     }
 
     @Override
