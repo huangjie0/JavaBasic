@@ -3,10 +3,7 @@ package SetProgression;
 * set集合 HashSet、LinkedHashSet、TreeSet
 * */
 
-import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 
 public class SetTest {
     public static void main(String[] args) {
@@ -18,7 +15,7 @@ public class SetTest {
         s.add(6);
         s.add(6);
         System.out.println(s);
-        Set<Student> ss = new TreeSet<>();
+        Set<Student> ss = new TreeSet<>((o1, o2) -> Double.compare(o1.getHeight(),o2.getHeight()));
         Student s1 = new Student("黄杰",18,23.5);
         Student s2 = new Student("小明",20,24.5);
         Student s3 = new Student("小海",22,22.5);
@@ -34,6 +31,7 @@ public class SetTest {
         ss.add(s3);
         ss.add(s4);
         ss.add(s4);
+        ss.add(s5);
         //哈希表
 //        hashSet基于数组加链表（jdk8之前，新元素存入数组，占老元素位置，老元素挂在下面）（jdk8之后，新元素直接挂在老元素下面，红黑树）
         System.out.println(ss);
