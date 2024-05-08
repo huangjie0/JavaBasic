@@ -35,6 +35,5 @@ public class SetTest {
         //哈希表
 //        hashSet基于数组加链表（jdk8之前，新元素存入数组，占老元素位置，老元素挂在下面）（jdk8之后，新元素直接挂在老元素下面，红黑树）
         System.out.println(ss);
-
     }
 }
