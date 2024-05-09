@@ -65,7 +65,7 @@ public class Test {
         List<Double> score = new ArrayList<>();
         Collections.addAll(score,88.5,89.9,87.6,82.3,98.3);
         //需求1，找出及格的分数
-        score.stream().filter(sq -> sq>= 60).sorted().forEach(sv1 -> System.out.println(sv1));
+//        score.stream().filter(sq -> sq>= 60).sorted().forEach(System.out::println);
 
         List<Student> students = new ArrayList<>();
         Student s1 = new Student("黄杰",18,176.5);
@@ -82,7 +82,12 @@ public class Test {
         //需求4，找出身高倒数2名的学生
 //        students.stream().sorted(((o1, o2) -> Double.compare(o2.getHeight(),o1.getHeight()))).skip(students.size()-2).forEach(System.out::println);
         //需求5，找出身高超过168的学生什么名字，去重
-        students.stream().filter(j->j.getHeight() > 168).map(Student::getName).distinct().forEach(System.out::println);
+//        students.stream().filter(j->j.getHeight() > 168).map(Student::getName).distinct().forEach(System.out::println);
+        //stream流中的合并流
+        Stream<String>  sdsd = Stream.of("张三","李四");
+        Stream<String>  sds = Stream.of("张三2","王五");
 
+        Stream<String> alls = Stream.concat(sdsd,sds);
+        alls.forEach(System.out::println);
     }
 }

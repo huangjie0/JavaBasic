@@ -1,5 +1,7 @@
 package Stream;
 
+import java.util.Objects;
+
 public class Student {
     private String name;
     private int age;
@@ -45,5 +47,18 @@ public class Student {
                 ", age=" + age +
                 ", height=" + height +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Student student = (Student) o;
+        return age == student.age && Double.compare(student.height, height) == 0 && Objects.equals(name, student.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, age, height);
     }
 }
