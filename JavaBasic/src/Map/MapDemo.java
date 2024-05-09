@@ -3,7 +3,7 @@ package Map;
 import java.util.*;
 
 /**
- * map集合的案例
+ * map集合的案例,统计景点出现的次数
  * */
 
 public class MapDemo {
