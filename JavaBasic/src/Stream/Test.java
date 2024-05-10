@@ -3,6 +3,8 @@ package Stream;
  * Stream流操作集合数组的数据,相当于流水线操作数据
  * */
 
+import SimpleSuccession.D;
+
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -71,7 +73,7 @@ public class Test {
         Student s1 = new Student("黄杰",18,176.5);
         Student s2 = new Student("小红",20,177.5);
         Student s3 = new Student("小蓝",21,179.5);
-        Student s4 = new Student("小蓝",23,179.5);
+        Student s4 = new Student("小蓝",21,179.5);
         Student s5 = new Student("小刘",28,169.5);
         Student s6 = new Student("小明",34,199.5);
         Collections.addAll(students,s1,s2,s3,s4,s5,s6);
@@ -100,9 +102,22 @@ public class Test {
         Student sp = students.stream().min((o1,o2)->Double.compare(o1.getHeight(), o2.getHeight())).get();
         System.out.println(sp);
 
-        //将stream流处理后的结果以集合/数组的方式返回
+        //将stream流处理后的结果以集合/数组的方式返回,流只能收集一次
         List<Student> sr = students.stream().filter(w -> w.getHeight() > 170).collect(Collectors.toList());//collect收集，收集到List集合中去
         System.out.println(sr);
 
+        Set<Student> st = students.stream().filter(w -> w.getHeight() > 170).collect(Collectors.toSet());//collect收集，收集到Set集合中去
+        System.out.println(st);
+
+        //需求将流收集到map集合中去,指定键值对
+        Map<String,Double> ml = students.stream().filter(a->a.getHeight() > 170).distinct().collect(Collectors.toMap(a -> a.getName(), a->a.getHeight()));
+        System.out.println(ml);
+
+        //将stream流收集到数组中去
+        Object[] arr = students.stream().filter(a->a.getHeight()>170).toArray();
+        //收集学生类型的数组
+        Student[] studentArr = students.stream().filter(a->a.getHeight()>170).toArray(len -> new Student[len]);
+        System.out.println(Arrays.toString(arr));
+        System.out.println(Arrays.toString(studentArr));
     }
 }
