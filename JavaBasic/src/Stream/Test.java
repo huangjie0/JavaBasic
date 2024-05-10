@@ -38,7 +38,7 @@ public class Test {
         Set<String> set = new HashSet<>();
         Collections.addAll(set,"成龙","李小龙","赵信","马德华");
         Stream<String> s = set.stream();
-//        s.filter(v -> v.contains("德")).forEach(e -> System.out.println(e));
+//       s.filter(v -> v.contains("德")).forEach(e -> System.out.println(e));
 
 
         //Map集合Stream
@@ -89,5 +89,20 @@ public class Test {
 
         Stream<String> alls = Stream.concat(sdsd,sds);
         alls.forEach(System.out::println);
+
+        //stream的终极方法
+        long size = students.stream().filter(sw -> sw.getAge() > 20).count(); //返回统计的结果
+        System.out.println(size);
+
+        Student sb = students.stream().max((o1,o2)->Double.compare(o1.getHeight(), o2.getHeight())).get();
+        System.out.println(sb);
+
+        Student sp = students.stream().min((o1,o2)->Double.compare(o1.getHeight(), o2.getHeight())).get();
+        System.out.println(sp);
+
+        //将stream流处理后的结果以集合/数组的方式返回
+        List<Student> sr = students.stream().filter(w -> w.getHeight() > 170).collect(Collectors.toList());//collect收集，收集到List集合中去
+        System.out.println(sr);
+
     }
 }
