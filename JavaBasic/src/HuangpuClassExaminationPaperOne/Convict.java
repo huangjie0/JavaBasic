@@ -30,4 +30,12 @@ public class Convict {
     public void setLocation(int location) {
         this.location = location;
     }
+
+    @Override
+    public String toString() {
+        return "Convict{" +
+                "code=" + code +
+                ", location=" + location +
+                '}';
+    }
 }

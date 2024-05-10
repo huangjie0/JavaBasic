@@ -119,6 +119,5 @@ public class Test {
         Student[] studentArr = students.stream().filter(a->a.getHeight()>170).toArray(len -> new Student[len]);
         System.out.println(Arrays.toString(arr));
         System.out.println(Arrays.toString(studentArr));
-
     }
 }
