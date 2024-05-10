@@ -7,5 +7,6 @@ public class fileTest {
         File f = new File("F:\\ps\\ab.txt");
         System.out.println(f.length());
 
+
     }
 }
