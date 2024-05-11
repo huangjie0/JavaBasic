@@ -18,5 +18,4 @@ public class Test {
     public static void test3(){
         test2();
     }
-
 }
