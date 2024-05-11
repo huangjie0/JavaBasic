@@ -47,12 +47,19 @@ public class Test {
 //        f.close();
 
         //一次性读取完全部字节
-        File f1 = new File("src\\aa.txt");
-        long size = f1.length();
-        byte[] buffer = new byte[(int) size];
-        int len = f.read(buffer);
-        String s = new String(buffer,0,len);
-        System.out.println(s);
-        System.out.println(len);
+//        File f1 = new File("src\\aa.txt");
+//        long size = f1.length();
+//        byte[] buffer = new byte[(int) size];
+//        int len = f.read(buffer);
+//        String s = new String(buffer,0,len);
+//        System.out.println(s);
+//        System.out.println(len);
+
+        //一次性读取全部字节优化操作
+//        byte[] buffer = f.readAllBytes();
+//        System.out.println(new String(buffer));
+
+
+
     }
 }
