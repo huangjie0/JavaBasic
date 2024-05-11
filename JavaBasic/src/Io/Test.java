@@ -56,10 +56,8 @@ public class Test {
 //        System.out.println(len);
 
         //一次性读取全部字节优化操作
-//        byte[] buffer = f.readAllBytes();
-//        System.out.println(new String(buffer));
-
-
+        byte[] buffer = f.readAllBytes();
+        System.out.println(new String(buffer));
 
     }
 }
