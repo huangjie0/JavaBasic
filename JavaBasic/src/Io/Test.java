@@ -13,10 +13,37 @@ public class Test {
 //        InputStream f = new FileInputStream(new File("JavaBasic\\src\\aa.txt"));
         InputStream f = new FileInputStream("src\\aa.txt");
         //开始读取字节数据,每次读取一个字节,返回
-        int b = f.read();
-        System.out.println((char)b);
-        int b2 = f.read();
-        System.out.println((char)b2);
+//        int b = f.read();
+//        System.out.println((char)b);
+//        int b2 = f.read();
+//        System.out.println((char)b2);
+//        int b;
+//        while ((b = f.read()) != -1){
+//            System.out.println((char)b);
+//        }
+//        //读取数据性能很差，流使用完毕要释放
+//        f.close();
 
+        //一次多次读取文件
+//        byte[] buffer = new byte[3];
+//        int len = f.read(buffer);
+//        String rs = new String(buffer);
+//        System.out.println(rs);
+//        System.out.println(len);
+//
+//        int len2 = f.read(buffer);
+//        String rs2 = new String(buffer);
+//        System.out.println(rs2);
+//        System.out.println(len2);
+
+        //使用循环多次读取
+        byte[] buffer = new byte[3];
+        int len;
+        while ((len = f.read(buffer)) !=-1){
+            String r = new String(buffer,0,len);
+            System.out.println(r);
+        }
+        //性能明显提升
+        f.close();
     }
 }
