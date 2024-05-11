@@ -38,10 +38,27 @@ public class Test {
 
         //mkdir 创建文件夹，注意，只能创建一个文件
         File f7 = new File("F:\\ps\\aaa");
-        System.out.println(f7.mkdir());
+//        System.out.println(f7.mkdir());
         //mkdirs 创建多个文件夹
         File f8 = new File("F:\\ps\\bbb\\ccc\\ddd");
-        System.out.println(f8.mkdirs());
+//        System.out.println(f8.mkdirs());
+        //删除文件,或者空文件，不能是非空文件夹
+        System.out.println(f1.delete());
+        System.out.println(f4.delete());
+        //掌握File提供的遍历文件夹的方法
+        //list遍历一级文件夹名称返回字符串数组
+        File f0 = new File("F:\\ps\\a");
+        String[] names = f0.list();
+        for (String name : names) {
+            System.out.println(name);
+        }
+
+        //获取一级文件的文件对象到对象数组中去
+        File[] files = f0.listFiles();
+        for (File file : files) {
+//            System.out.println(file);
+            file.getName();
+        }
 
     }
 }
