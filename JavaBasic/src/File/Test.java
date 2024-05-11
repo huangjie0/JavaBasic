@@ -1,10 +1,11 @@
 package File;
 
 import java.io.File;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 
 public class Test {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         File f1 = new File("F:\\ps\\ab.txt");
 //        File f1 = new File("F:" + File.separator + "ps" + File.separator + "111.png");
         //返回文件字节个数,文件大小
@@ -27,6 +28,20 @@ public class Test {
 //        f1.lastModified()
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         System.out.println(sdf.format(f1.lastModified()));
+        File f5 = new File("D:/fdf/ds232d/txt");
+        System.out.println(f5.getPath());
+        //获取绝对路径
+        System.out.println(f5.getAbsolutePath());
+        //创建文件
+        File f4 = new File("F:\\ps\\abc.txt");
+        System.out.println(f4.createNewFile());
+
+        //mkdir 创建文件夹，注意，只能创建一个文件
+        File f7 = new File("F:\\ps\\aaa");
+        System.out.println(f7.mkdir());
+        //mkdirs 创建多个文件夹
+        File f8 = new File("F:\\ps\\bbb\\ccc\\ddd");
+        System.out.println(f8.mkdirs());
 
     }
 }
