@@ -5,7 +5,7 @@ import java.io.Writer;
 
 public class Test {
     public static void main(String[] args) {
-        try (Writer r = new FileWriter("src/aaa.txt")){
+        try (Writer r = new FileWriter("src/aaa.txt",true)){
             r.write('a');
             r.write(97);
             r.write('黄');
@@ -21,5 +21,4 @@ public class Test {
             e.printStackTrace();
         }
     }
-
 }
