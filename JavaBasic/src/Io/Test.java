@@ -9,7 +9,7 @@ public class Test {
         //实现类 FileInputStream FileOutPutStream   FileReader FileWriter
 //        InputStream f = new FileInputStream(new File("JavaBasic\\src\\aa.txt"));
 //        InputStream f = new FileInputStream("src\\aa.txt");
-        OutputStream f = new FileOutputStream("src\\bb.txt",true);
+//        OutputStream f = new FileOutputStream("src\\bb.txt",true);
         //开始读取字节数据,每次读取一个字节,返回
 //        int b = f.read();
 //        System.out.println((char)b);
@@ -58,18 +58,31 @@ public class Test {
 //        System.out.println(new String(buffer));
 
         //字节输出流
-        f.write(97); //97是一个字节代表a
-        f.write('b'); // 'b' 98
-//        f.write('黄');
-
-        byte[] bytes = "我爱你中国".getBytes();
-        f.write(bytes);
-
-        //换行符
-        f.write("\r\n".getBytes());
-
-        f.write(bytes,0,15);
-        f.close();
-
+//        f.write(97); //97是一个字节代表a
+//        f.write('b'); // 'b' 98
+////        f.write('黄');
+//
+//        byte[] bytes = "我爱你中国".getBytes();
+//        f.write(bytes);
+//
+//        //换行符
+//        f.write("\r\n".getBytes());
+//
+//        f.write(bytes,0,15);
+//        f.close();
+        //复制照片，创建字节输入管道与源文件接通
+        InputStream is = new FileInputStream("D:\\188e7282ba15bc20949a52041ba2ca5.png");
+        //创建字节输出流管道与目标接通
+        OutputStream os = new FileOutputStream("F:/ps/meinv.png");
+        //创建字节数组，负责转移字节数据
+        byte[] buffer = new byte[1024]; //1kb
+        //从字节输入流中读取数据写出去字节输出流中，读多少写多少
+        int len;
+        while ((len = is.read(buffer)) != -1){
+            os.write(buffer,0,len);
+        }
+        os.close();
+        is.close();
+        System.out.println("复制完成！！");
     }
 }
