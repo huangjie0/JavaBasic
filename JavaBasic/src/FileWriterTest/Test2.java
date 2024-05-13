@@ -17,5 +17,6 @@ public class Test2 {
 //        w.write("张三");
 //        w.flush();
         w.close();//关闭流包含刷新操作，刷新可以继续往里面写数据
+
     }
 }
