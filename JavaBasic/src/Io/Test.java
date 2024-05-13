@@ -81,8 +81,10 @@ public class Test {
         while ((len = is.read(buffer)) != -1){
             os.write(buffer,0,len);
         }
+
         os.close();
         is.close();
         System.out.println("复制完成！！");
+
     }
 }
