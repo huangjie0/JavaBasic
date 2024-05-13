@@ -85,6 +85,15 @@ public class Test {
         os.close();
         is.close();
         System.out.println("复制完成！！");
-
+    }
+    public static int chu(int a,int b){
+        try{
+            return a / b;
+        }catch (Exception e){
+            e.printStackTrace();
+            return -1;
+        }finally {
+            return 111;
+        }
     }
 }
