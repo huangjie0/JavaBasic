@@ -16,6 +16,7 @@ public class Test {
             ps.print("你好哦");
             ps.print(true);
             ps.print(99.5);
+//            ps.write(4);
         } catch (Exception e) {
             e.printStackTrace();
         }
