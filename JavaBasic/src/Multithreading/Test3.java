@@ -15,18 +15,14 @@ public class Test3 {
 //        };
 //        new Thread(target).start();
         //简化写法
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                for (int i = 0; i <= 5; i++) {
-                    System.out.println("子线程的序号" + i);
-                }
+        new Thread(()->{
+            for (int i = 0; i <= 5; i++) {
+                System.out.println("子线程的序号" + i);
             }
         }).start();
 
         for (int i = 0; i <= 5; i++) {
             System.out.println("主线程的序号" + i);
         }
-
     }
 }
