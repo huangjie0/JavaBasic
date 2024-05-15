@@ -3,6 +3,7 @@ package XML;
 * 解析xml文件
 * */
 
+import org.dom4j.Attribute;
 import org.dom4j.Document;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
@@ -32,6 +33,25 @@ public class Test {
         //获取当前元素下的某个元素
         Element p = root.element("People");
         System.out.println(p.getName());
+        System.out.println(p.getText());
 
+        Element p1 = root.element("User");
+        System.out.println(p1.elementText("name"));
+
+        //获取元素的属性信息
+        System.out.println(p1.attributeValue("id"));
+        List<Attribute> attributes = p1.attributes();
+        for (Attribute attribute : attributes) {
+            System.out.println(attribute.getName() + "=" + attribute.getValue());
+        }
+
+        //获取全部的文本内容
+        System.out.println(p1.elementText("name"));
+        System.out.println(p1.elementText("sex"));
+        System.out.println(p1.elementText("age"));
+        System.out.println(p1.elementText("password"));
+        System.out.println(p1.elementText("data"));
+        System.out.println(p1.elementText("data1"));
+        
     }
 }
