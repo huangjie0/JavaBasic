@@ -1,4 +1,7 @@
 package Multithreading;
+/**
+ * 多线程创建方式一
+ * */
 
 public class MyThread  extends  Thread{
     @Override
