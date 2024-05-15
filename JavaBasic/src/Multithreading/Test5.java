@@ -5,13 +5,13 @@ package Multithreading;
 
 public class Test5 {
     public static void main(String[] args) {
-        Thread t1 = new MyThread();
-        t1.setName("1号子线程");
+        Thread t1 = new MyThread("1号子线程");
+//        t1.setName("1号子线程");
         t1.start();
         System.out.println(t1.getName());
 
-        Thread t2 = new MyThread();
-        t2.setName("2号子线程");
+        Thread t2 = new MyThread("2号子线程");
+//        t2.setName("2号子线程");
         t2.start();
         System.out.println(t2.getName());
 
@@ -23,6 +23,5 @@ public class Test5 {
         for (int i = 0; i <= 5; i++) {
             System.out.println("main线程输出" + i);
         }
-
     }
 }
