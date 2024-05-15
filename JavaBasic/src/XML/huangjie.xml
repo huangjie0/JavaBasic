@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- 注释 以上抬头声明必须放在第一行-->
+<!--根标签只能有一个-->
+<Users>
+    <User id="1">
+        <name>张无忌</name>
+        <sex>男</sex>
+        <age>50</age>
+        <password>mini</password>
+        <data>3 &lt; 2 &amp;&amp; 8 > 2 </data>
+        <data1>
+            <![CDATA[
+                3 > 1 && 23 < 100
+            ]]>
+        </data1>
+    </User>
+    <User id="2">
+        <name>黄杰</name>
+        <sex>男</sex>
+        <age>28</age>
+    </User>
+</Users>
