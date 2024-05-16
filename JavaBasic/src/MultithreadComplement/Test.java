@@ -5,7 +5,6 @@ package MultithreadComplement;
 
 public class Test {
     public static void main(String[] args) {
-        //线程的6种状态
-
+        //线程的6种状态 new (新建)、runnable (可运行)、blocked (锁阻塞)、waiting (无限等待)、timed waiting(计时等待)、 Teminated(被终止)
     }
 }
