@@ -9,8 +9,17 @@ import java.util.concurrent.*;
 
 public class Test2 {
     public static void main(String[] args) throws Exception {
-        ExecutorService pool = new ThreadPoolExecutor(3,5,8,
-                TimeUnit.SECONDS,new ArrayBlockingQueue<>(4), Executors.defaultThreadFactory(),new ThreadPoolExecutor.CallerRunsPolicy());
+//        ExecutorService pool = new ThreadPoolExecutor(3,5,8,
+//                TimeUnit.SECONDS,new ArrayBlockingQueue<>(4), Executors.defaultThreadFactory(),new ThreadPoolExecutor.CallerRunsPolicy());
+
+        //通过Executors创建一个线程池对象
+        ExecutorService pool = Executors.newFixedThreadPool(17);
+//        ExecutorService pool = Executors.newSingleThreadExecutor();
+
+        //计算密集型的任务，核心线程数量 = CPU + 1
+        //Io密集的任务，核心线程数量 = CPU * 2
+
+
         //处理callable任务
         Future<String> f1 = pool.submit(new MyCallable(100));
         Future<String> f2 = pool.submit(new MyCallable(200));
