@@ -15,6 +15,12 @@ public class Account {
     public Account() {
     }
 
+    public static void test(){
+        synchronized (Account.class){
+
+        }
+    }
+
     public double getMoney() {
         return money;
     }
@@ -32,12 +38,15 @@ public class Account {
     }
     public void drawMoney(double money){
         String name = Thread.currentThread().getName();
-        if(this.money >= money){
-            System.out.println(name + "来取钱" + money + "成功！");
-            this.money-=money;
-            System.out.println(name + "取钱后余额剩余" + this.money);
-        }else {
-            System.out.println(name + "余额不足");
+//        this代表共享资源
+        synchronized (this) {
+            if(this.money >= money){
+                System.out.println(name + "来取钱" + money + "成功！");
+                this.money-=money;
+                System.out.println(name + "取钱后余额剩余" + this.money);
+            }else {
+                System.out.println(name + "余额不足");
+            }
         }
     }
 }
