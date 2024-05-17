@@ -10,5 +10,6 @@
     <orderEntry type="library" name="lib" level="project" />
     <orderEntry type="library" name="lib (2)" level="project" />
     <orderEntry type="library" name="lib (3)" level="project" />
+    <orderEntry type="library" name="bluecatcode.junit.4.10.extended" level="project" />
   </component>
 </module>
