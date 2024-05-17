@@ -1,7 +1,5 @@
 package NetworkProgramming;
 
-import java.io.DataInputStream;
-import java.io.InputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 /**
@@ -18,21 +16,8 @@ public class Server2 {
 
         while (true) {
             Socket s = ss.accept();
-            InputStream is = s.getInputStream();
-
-            DataInputStream dis = new DataInputStream(is);
-
-            while (true) {
-                try {
-                    String rs = dis.readUTF();
-                    System.out.println(rs);
-                } catch (Exception e) {
-                    System.out.println(s.getRemoteSocketAddress() + "离线了！");
-                    s.close();
-                    dis.close();
-                    break;
-                }
-            }
+            //将客户端通信管道交给独立的线程进行管理
+            new MyThread(s).start();
         }
     }
 }
