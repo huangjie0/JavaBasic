@@ -14,6 +14,7 @@ public class Client2 {
         Socket s = new Socket("127.0.0.1",8888);
         // 从管道中得到字节输出流
         OutputStream os = s.getOutputStream();
+
         //将低级包装输出流
         DataOutputStream dos = new DataOutputStream(os);
         Scanner sc = new Scanner(System.in);

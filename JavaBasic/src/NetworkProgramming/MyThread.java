@@ -16,7 +16,10 @@ public class MyThread extends Thread{
                     String rs = dis.readUTF();
                     System.out.println(rs);
                 } catch (Exception e) {
-                    e.printStackTrace();
+                    System.out.println("有人下线了！！");
+                    dis.close();
+                    is.close();
+                    break;
                 }
             }
         } catch (Exception e) {
