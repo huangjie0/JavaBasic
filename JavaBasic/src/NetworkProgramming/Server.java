@@ -26,7 +26,6 @@ public class Server {
             System.out.println(packet.getAddress().getHostAddress());
             System.out.println(packet.getPort());
             System.out.println("--------------------------------------");
-
         }
     }
 }
