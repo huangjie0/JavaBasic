@@ -12,8 +12,12 @@ public class MyThread extends Thread{
             InputStream is = s.getInputStream();
             DataInputStream dis = new DataInputStream(is);
             while (true) {
-                String rs = dis.readUTF();
-                System.out.println(rs);
+                try {
+                    String rs = dis.readUTF();
+                    System.out.println(rs);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         } catch (Exception e) {
             e.printStackTrace();
