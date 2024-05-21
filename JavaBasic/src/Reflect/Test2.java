@@ -42,6 +42,5 @@ public class Test2 {
 //        System.out.println(cc.getParameterCount());
         Student cc1 = (Student) cc.newInstance("huangjie",20,"呼呼");
         System.out.println(cc1);
-
     }
 }
