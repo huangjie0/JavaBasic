@@ -1,6 +1,7 @@
 package com.example.springbootwebquickstart.controller;
 
 import com.example.springbootwebquickstart.pojo.Address;
+import com.example.springbootwebquickstart.pojo.Result;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -8,24 +9,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-
 public class ResponseController {
     @RequestMapping("/hello2")
-    public String hello(){
+    public Result hello(){
         System.out.println("hello 2");
-        return "hello hjuhu";
+        return Result.success("hello world2!!");
     }
 
     @RequestMapping("/getAddr")
-    public Address getAddr(){
+    public Result getAddr(){
         Address addr = new Address();
         addr.setProvince("广东");
         addr.setCity("深圳");
-        return addr;
+        return Result.success(addr);
     }
 
     @RequestMapping("/listAddr")
-    public List<Address> listAddr(){
+    public Result listAddr(){
         List<Address> list = new ArrayList<>();
 
         Address addr1 = new Address();
@@ -38,7 +38,7 @@ public class ResponseController {
 
         list.add(addr1);
         list.add(addr2);
-        return list;
+        return Result.success(list);
+
     }
-    
 }
