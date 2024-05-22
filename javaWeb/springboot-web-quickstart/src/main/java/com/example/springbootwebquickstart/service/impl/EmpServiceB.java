@@ -5,7 +5,6 @@ import com.example.springbootwebquickstart.pojo.Emp;
 import com.example.springbootwebquickstart.service.EmpService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,7 +12,7 @@ import java.util.List;
 //@Component
 //@Primary
 @Service
-public class EmpServiceA implements EmpService {
+public class EmpServiceB implements EmpService {
     @Autowired  //依赖注入
     private EmpDao empDao;
     @Override
@@ -24,9 +23,9 @@ public class EmpServiceA implements EmpService {
         emplist.stream().forEach(emp -> {
             String gender = emp.getGender();
             if("1".equals(gender)){
-                emp.setGender("男");
+                emp.setGender("男士");
             }else if("2".equals(gender)){
-                emp.setGender("女");
+                emp.setGender("女士");
             }
 
             String job = emp.getJob();
