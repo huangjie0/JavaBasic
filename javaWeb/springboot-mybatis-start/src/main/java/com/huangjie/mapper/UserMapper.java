@@ -10,5 +10,9 @@ import java.util.List;
 public interface UserMapper {
     @Select("select * from user")
     public List<User> list();
+
+    @Select("select name from user")
+    public List<User> listName();
+
 }
 
