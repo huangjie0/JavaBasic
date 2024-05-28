@@ -21,7 +21,7 @@ public class Emp {
     private String image;
     private Short job;
     private LocalDate entrydate;
-    private Integer depId;
+    private Integer deptId;
     private LocalDateTime createTime;
     private LocalDateTime updateTime;
 }
