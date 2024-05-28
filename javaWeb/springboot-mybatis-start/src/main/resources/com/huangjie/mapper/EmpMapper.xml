@@ -20,10 +20,10 @@
             </set>
         where id = #{id}
     </update>
-    <delete id="deleteByIds">
+    <delete id="deleteByIds" parameterType="list">
         delete from emp where id in
-        <foreach collection="ids" open="(" close=")" separator="," item="id">
-            #{id}
+        <foreach collection="list" open="(" close=")" separator="," item="item">
+            #{item}
         </foreach>
     </delete>
 

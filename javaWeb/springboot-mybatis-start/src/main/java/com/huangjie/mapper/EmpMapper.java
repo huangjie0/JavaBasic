@@ -45,13 +45,9 @@ public interface EmpMapper {
     public Emp select(Integer id);
 
     //条件查询员工信息
-//    @Select("select * from emp where name like concat('%',#{name},'%') and gender = #{gender} and entrydate between #{begin} and #{end} order by update_time desc")
     public List<Emp> list(@Param("name") String name,@Param("gender") Short gender,@Param("begin") LocalDate begin,@Param("end") LocalDate end);
 
     //动态更新员工信息
-//    @Update("update emp set username = #{username},name=#{name} ,gender = #{gender},image = #{image},job=#{job},entrydate=#{entrydate}," +
-//            "dept_id=#{deptId},update_time=#{updateTime} where id = #{id};")
-
     public void update2(Emp emp);
 
     //批量删除员工
