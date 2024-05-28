@@ -3,6 +3,9 @@ package com.huangjie.mapper;
 import com.huangjie.pojo.Emp;
 import org.apache.ibatis.annotations.*;
 
+import java.time.LocalDate;
+import java.util.List;
+
 @Mapper
 public interface EmpMapper {
     //根据id删除员工信息
@@ -38,9 +41,20 @@ public interface EmpMapper {
 //    public Emp select(Integer id);
 
     //开启mybatis的驼峰自动命名开关
+    @Select("select * from emp where id = #{id}")
+    public Emp select(Integer id);
 
+    //条件查询员工信息
+//    @Select("select * from emp where name like concat('%',#{name},'%') and gender = #{gender} and entrydate between #{begin} and #{end} order by update_time desc")
+    public List<Emp> list(@Param("name") String name,@Param("gender") Short gender,@Param("begin") LocalDate begin,@Param("end") LocalDate end);
 
+    //动态更新员工信息
+//    @Update("update emp set username = #{username},name=#{name} ,gender = #{gender},image = #{image},job=#{job},entrydate=#{entrydate}," +
+//            "dept_id=#{deptId},update_time=#{updateTime} where id = #{id};")
 
+    public void update2(Emp emp);
 
+    //批量删除员工
+    public void deleteByIds(List<Integer> ids);
 }
 
