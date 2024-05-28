@@ -3,6 +3,9 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.huangjie.mapper.EmpMapper">
+    <sql id="commonSelect">
+        select id, username, password, name, gender, image, job, entrydate, dept_id, create_time, update_time from emp
+    </sql>
     <update id="update2">
         update emp
             <set>
@@ -25,7 +28,7 @@
     </delete>
 
     <select id="list" resultType="com.huangjie.pojo.Emp">
-        select * from emp
+        <include refid="commonSelect"></include>
         <where>
             <if test="name != null">name like concat('%',#{name},'%')</if>
             <if test="gender != null"> and gender = #{gender}</if>
