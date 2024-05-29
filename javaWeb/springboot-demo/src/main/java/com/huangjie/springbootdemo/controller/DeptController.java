@@ -74,4 +74,5 @@ public class DeptController {
         deptService.put(dept);
         return Result.success();
     }
+
 }
