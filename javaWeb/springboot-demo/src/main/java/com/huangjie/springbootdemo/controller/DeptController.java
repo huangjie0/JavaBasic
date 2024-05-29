@@ -18,15 +18,22 @@ public class DeptController {
     @Autowired
     private DeptService deptService;
 
+    /**
+     * 查询部门全部信息
+     * */
+
     @GetMapping
     public Result list(){
-
         log.info("查询全部信息");
         //调用service查询全部信息
         List<Dept> deptList = deptService.list();
         return Result.success(deptList);
 
     }
+
+    /**
+     * 根据id删除员工部门信息
+     * */
 
     @DeleteMapping("/{id}")
     public Result delete(@PathVariable Integer id){
@@ -35,12 +42,20 @@ public class DeptController {
         return Result.success();
     }
 
+    /**
+     * 新增部门信息
+     * */
+
     @PostMapping
     public Result add(@RequestBody Dept dept){
         log.info("新增部门：{}",dept);
         deptService.add(dept);
         return Result.success();
     }
+
+    /**
+     * 根据id查询部门信息
+     * */
 
     @GetMapping("/{id}")
     public Result select(@PathVariable Integer id){
@@ -49,6 +64,9 @@ public class DeptController {
         Dept selectDept = deptService.select(id);
         return Result.success(selectDept);
     }
+    /**
+     * 修改部门信息操作
+     * */
 
     @PutMapping
     public Result putDept(@RequestBody Dept dept){
