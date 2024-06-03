@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="javaWeb" />
         <module name="springboot-web-quickstart" />
+        <module name="demo" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="11">
