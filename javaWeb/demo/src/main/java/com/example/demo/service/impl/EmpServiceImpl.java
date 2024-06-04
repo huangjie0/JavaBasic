@@ -57,4 +57,9 @@ public class EmpServiceImpl implements com.example.demo.service.EmpService {
         emp.setUpdateTime(LocalDateTime.now());
         empMapper.update(emp);
     }
+
+    @Override
+    public Emp login(Emp emp) {
+        return empMapper.login(emp);
+    }
 }

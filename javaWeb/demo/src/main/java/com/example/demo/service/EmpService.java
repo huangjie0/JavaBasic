@@ -16,4 +16,6 @@ public interface EmpService {
     Emp getById(Integer id);
 
     void update(Emp emp);
+
+    Emp login(Emp emp);
 }
