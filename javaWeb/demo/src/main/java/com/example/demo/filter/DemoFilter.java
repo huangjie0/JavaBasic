@@ -15,9 +15,11 @@ public class DemoFilter implements Filter {
 
     @Override //每次发请求，就会拦截操作，调用多次
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-        //放行
+        //放行之前操作
+        System.out.println("demo拦截之前的操作！");
         filterChain.doFilter(servletRequest,servletResponse);
-
+        System.out.println("demo拦截之后的操作！");
+        //放行之后的操作
     }
 
     @Override //销毁方法，只会调用一次
