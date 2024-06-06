@@ -11,8 +11,7 @@ import org.springframework.stereotype.Component;
 public class MyAspect1 {
 
     @Pointcut("execution(* com.example.demo.service.impl.DeptServiceImpl.*(..))")
-    public void pt(){
-    } //当切入点重复时候进行抽取操作
+    public void pt(){} //当切入点重复时候进行抽取操作
 
     @Before("pt()")
     public void before(){
