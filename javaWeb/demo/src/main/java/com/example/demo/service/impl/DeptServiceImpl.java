@@ -25,7 +25,7 @@ public class DeptServiceImpl implements DeptService {
         return deptMapper.list();
     }
 
-    @Transactional(rollbackFor = Exception.class) //事务管理，将方法将于spring管理
+    @Transactional(rollbackFor = Exception.class) //事务管理，将方法将于spring管理，处理所有的异常
     @Override
     public void delete(Integer id){
         deptMapper.delete(id);
