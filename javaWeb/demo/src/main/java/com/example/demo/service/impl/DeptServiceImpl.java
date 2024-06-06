@@ -6,6 +6,7 @@ import com.example.demo.pojo.Dept;
 import com.example.demo.service.DeptService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -24,12 +25,12 @@ public class DeptServiceImpl implements DeptService {
         return deptMapper.list();
     }
 
+    @Transactional(rollbackFor = Exception.class) //事务管理，将方法将于spring管理
     @Override
     public void delete(Integer id){
         deptMapper.delete(id);
         empMapper.deleteByDept(id);
     }
-
 
     @Override
     public void add(Dept dept) {
