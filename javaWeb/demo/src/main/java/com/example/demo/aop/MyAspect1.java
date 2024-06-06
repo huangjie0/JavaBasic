@@ -9,12 +9,17 @@ import org.springframework.stereotype.Component;
 @Component
 @Aspect
 public class MyAspect1 {
-    @Before("execution(* com.example.demo.service.impl.DeptServiceImpl.*(..))")
+
+    @Pointcut("execution(* com.example.demo.service.impl.DeptServiceImpl.*(..))")
+    public void pt(){
+    } //当切入点重复时候进行抽取操作
+
+    @Before("pt()")
     public void before(){
         log.info("before...");
     }
 
-    @Around("execution(* com.example.demo.service.impl.DeptServiceImpl.*(..))")
+    @Around("pt()")
     public Object around(ProceedingJoinPoint joinPoint) throws Throwable {
         log.info("around before...");
         //运行时的方法
@@ -23,20 +28,18 @@ public class MyAspect1 {
         return result;
     }
 
-    @After("execution(* com.example.demo.service.impl.DeptServiceImpl.*(..))")
+    @After("pt()")
     public void after(){
         log.info("after...");
     }
 
-
-    @AfterReturning("execution(* com.example.demo.service.impl.DeptServiceImpl.*(..))") //原始方法正常运行，正常返回会运行次方法
+    @AfterReturning("pt()") //原始方法正常运行，正常返回会运行次方法
     public void afterReturning(){
         log.info("afterReturning...");
     }
 
-    @AfterThrowing("execution(* com.example.demo.service.impl.DeptServiceImpl.*(..))") //在异常通知，在方法抛出异常之后执行
+    @AfterThrowing("pt()") //在异常通知，在方法抛出异常之后执行
     public void afterThrowing(){
         log.info("afterThrowing...");
     }
-    
 }

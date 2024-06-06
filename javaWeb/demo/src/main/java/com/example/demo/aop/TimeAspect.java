@@ -11,7 +11,9 @@ import org.springframework.stereotype.Component;
 @Slf4j
 public class TimeAspect {
 
-    @Around("execution(* com.example.demo.service.*.*(..))")  //切入点表达式
+//    @Around("execution(* com.example.demo.service.*.*(..))")  //切入点表达式
+    @Around("com.example.demo.aop.MyAspect1.pt()") //引入myAspect1里面的切面表达式
+
     public Object recordTime(ProceedingJoinPoint joinPoint) throws Throwable {
         //记录开始时间
         long begin = System.currentTimeMillis();
