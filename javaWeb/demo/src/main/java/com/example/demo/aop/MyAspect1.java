@@ -34,8 +34,9 @@ public class MyAspect1 {
         log.info("afterReturning...");
     }
 
-    @AfterThrowing("execution(* com.example.demo.service.impl.DeptServiceImpl.*(..))")
+    @AfterThrowing("execution(* com.example.demo.service.impl.DeptServiceImpl.*(..))") //在异常通知，在方法抛出异常之后执行
     public void afterThrowing(){
         log.info("afterThrowing...");
     }
+    
 }
