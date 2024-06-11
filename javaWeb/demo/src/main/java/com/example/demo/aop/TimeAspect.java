@@ -7,7 +7,7 @@ import org.aspectj.lang.annotation.Aspect;
 import org.springframework.stereotype.Component;
 
 @Component
-@Aspect  //aop类
+//@Aspect  //aop类
 @Slf4j
 public class TimeAspect {
 

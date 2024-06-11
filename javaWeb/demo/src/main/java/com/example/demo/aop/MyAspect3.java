@@ -4,11 +4,13 @@ import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 @Component
-@Aspect
+//@Aspect
 @Slf4j
+//@Order(1)
 public class MyAspect3 {
 
     @Before("com.example.demo.aop.MyAspect1.pt()")
