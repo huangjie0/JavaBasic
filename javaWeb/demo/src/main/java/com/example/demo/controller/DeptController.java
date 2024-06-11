@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import com.example.demo.anno.Log;
 import com.example.demo.pojo.Dept;
 import com.example.demo.pojo.Result;
 import com.example.demo.service.DeptService;
@@ -23,6 +24,7 @@ public class DeptController {
         return Result.success(deptList);
     }
 
+    @Log
     @DeleteMapping("/{id}")
     public Result delete(@PathVariable Integer id){
         log.info("删除部门:{}",id);
@@ -31,6 +33,7 @@ public class DeptController {
     }
 
     @PostMapping
+    @Log
     public Result update(@RequestBody Dept dept) {
         log.info("新增部门:{}", dept);
         deptService.add(dept);

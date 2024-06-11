@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 import java.util.Arrays;
 
 @Component
-@Aspect
+//@Aspect
 @Slf4j
 public class MyAspect6 {
     @Pointcut("execution(* com.example.demo.service.DeptService.*(..))")

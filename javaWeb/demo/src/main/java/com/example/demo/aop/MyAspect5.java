@@ -7,7 +7,7 @@ import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
 
 @Component
-@Aspect
+//@Aspect
 @Slf4j
 public class MyAspect5 {
 
