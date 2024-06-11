@@ -1,5 +1,6 @@
 package com.example.demo.service.impl;
 
+import com.example.demo.aop.MyLog;
 import com.example.demo.mapper.DeptMapper;
 import com.example.demo.mapper.EmpMapper;
 import com.example.demo.pojo.Dept;
@@ -21,18 +22,21 @@ public class DeptServiceImpl implements DeptService {
     private EmpMapper empMapper;
 
     @Override
+    @MyLog
     public List<Dept> list(){
         return deptMapper.list();
     }
 
     @Transactional(rollbackFor = Exception.class) //事务管理，将方法将于spring管理，处理所有的异常
     @Override
+    @MyLog
     public void delete(Integer id){
         deptMapper.delete(id);
         empMapper.deleteByDept(id);
     }
 
     @Override
+    @MyLog
     public void add(Dept dept) {
         dept.setCreateTime(LocalDateTime.now());
         dept.setUpdateTime(LocalDateTime.now());

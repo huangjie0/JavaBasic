@@ -12,8 +12,9 @@ import org.springframework.stereotype.Component;
 public class MyAspect5 {
 
 //    @Pointcut("execution(public void com.example.demo.service.impl.DeptServiceImpl.*(java.lang.Integer))")
-    @Pointcut("execution(* com.example.demo.service.DeptService.list()) ||" +
-            "execution(* com.example.demo.service.DeptService.delete(java.lang.Integer))")
+//    @Pointcut("execution(* com.example.demo.service.DeptService.list()) ||" +
+//            "execution(* com.example.demo.service.DeptService.delete(java.lang.Integer))")
+    @Pointcut("@annotation(com.example.demo.aop.MyLog)")
     //匹配list方法和delete方法
     private void pt(){}
 
