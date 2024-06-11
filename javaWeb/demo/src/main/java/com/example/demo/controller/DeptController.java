@@ -6,10 +6,14 @@ import com.example.demo.pojo.Result;
 import com.example.demo.service.DeptService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
+import org.springframework.context.annotation.Scope;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+//@Lazy
+@Scope("prototype")
 @RestController
 @Slf4j
 @RequestMapping("/depts")
