@@ -1,5 +1,6 @@
 package com.example.controller;
 
+import com.example.pojo.Result;
 import com.example.pojo.User;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
@@ -13,9 +14,9 @@ import java.util.List;
 @RestController
 public class HelloControl {
     @RequestMapping("/hello")
-    public String hello(){
+    public Result hello(){
         System.out.println("hello World");
-        return "hello world";
+        return Result.success("Hello world!");
     }
 
 //    @RequestMapping("/simpleParam")
@@ -36,37 +37,36 @@ public class HelloControl {
 
     //接受复杂实体操作
     @RequestMapping("/simplePojo")
-    public String simplePoji(User user){
-        System.out.println(user);
-        return "ok";
+    public Result simplePoji(User user){
+        return Result.success(user);
     }
 
     //接受数组参数
     @RequestMapping("/arrayParam")
-    public String arrayParam(String[] hobby){
+    public Result arrayParam(String[] hobby){
         System.out.println(Arrays.toString(hobby));
-        return "ok";
+        return Result.success(hobby);
     }
 
     //接受集合参数
     @RequestMapping("/listParam")
-    public String listParam(@RequestParam List<String> hobby){
+    public Result listParam(@RequestParam List<String> hobby){
         System.out.println(hobby);
-        return "ok";
+        return Result.success(hobby);
     }
 
     //接受日期类型
     @RequestMapping("/dataParam")
-    public String dataParam(@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") LocalDateTime time){
+    public Result dataParam(@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") LocalDateTime time){
         System.out.println(time);
-        return "ok";
+        return Result.success(time);
     }
 
     //接受json请求参数
     @RequestMapping("/jsonParam")
-    public String jsonParam(@RequestBody User user){
+    public Result jsonParam(@RequestBody User user){
         System.out.println(user);
-        return "ok";
+        return Result.success(user);
     }
 
     //接受路劲参数
