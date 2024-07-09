@@ -57,6 +57,6 @@ public class LogAspect {
         log.info("AOP记录操作日志：{}",operateLog);
 
         return result;
-    }
 
+    }
 }
