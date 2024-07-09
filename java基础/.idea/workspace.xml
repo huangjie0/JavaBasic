@@ -5,6 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="97b298da-bd35-46eb-ab6a-c0639ecdddd8" name="变更" comment="">
+      <change afterPath="$PROJECT_DIR$/spring_boot_start/src/main/java/com/example/pojo/Address.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring_boot_start/src/main/java/com/example/pojo/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spring_boot_start/src/main/java/com/example/controller/HelloControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring_boot_start/src/main/java/com/example/controller/HelloControl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -89,7 +92,8 @@
       <workItem from="1720486168294" duration="38000" />
       <workItem from="1720486545683" duration="623000" />
       <workItem from="1720487181969" duration="59000" />
-      <workItem from="1720487482203" duration="378000" />
+      <workItem from="1720487482203" duration="1519000" />
+      <workItem from="1720489093548" duration="6529000" />
     </task>
     <task id="LOCAL-00001" summary="复习">
       <created>1720487642450</created>
@@ -98,11 +102,30 @@
       <option name="project" value="LOCAL" />
       <updated>1720487642450</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="复习">
+      <created>1720488022892</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1720488022892</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="复习" />
