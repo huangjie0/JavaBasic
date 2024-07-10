@@ -3,9 +3,11 @@ package com.example.dao.impl;
 import com.example.dao.EmpDao;
 import com.example.pojo.Emp;
 import com.example.utils.XmlParserUtils;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
 public class EmpDaoA implements EmpDao {
     @Override
     public List<Emp> listEmp(){
