@@ -1,16 +1,18 @@
 package com.example.server.impl;
 
-import com.example.dao.impl.EmpDaoA;
+import com.example.dao.EmpDao;
 import com.example.pojo.Emp;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Component
-public class EmpServer implements com.example.server.EmpServer {
+@Service
+//@Primary
+public class EmpServerA implements com.example.server.EmpServer {
     @Autowired
-    private EmpDaoA empDao;
+    private EmpDao empDao;
 
     @Override
     public List<Emp> listEmp(){
